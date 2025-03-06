@@ -1,4 +1,4 @@
-MAINTAINER?=	coreteam@pfsense.org
+MAINTAINER?=	coreteam@ahool.org
 COMMENT?=	filterlog
 
 PROG=           filterlog

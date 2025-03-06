@@ -1,7 +1,7 @@
 <?php
 /*
 	sarg.inc
-	part of pfSense (https://www.pfSense.org/)
+	part of Ahool (https://www.Ahool.org/)
 	Copyright (C) 2007 Joao Henrique F. Freitas
 	Copyright (C) 2012-2013 Marcello Coutinho
 	Copyright (C) 2015 ESF, LLC
@@ -572,7 +572,7 @@ function sarg_do_xmlrpc_sync($sync_to_ip, $port, $protocol, $username, $password
     $params = array(XML_RPC_encode($password), XML_RPC_encode($xml));
 
     /* Set a few variables needed for sync code */
-    $method = 'pfsense.merge_installedpackages_section_xmlrpc';
+    $method = 'ahool.merge_installedpackages_section_xmlrpc';
     $msg = new XML_RPC_Message($method, $params);
     $cli = new XML_RPC_Client('/xmlrpc.php', $url, $port);
     $cli->setCredentials($username, $password);
@@ -596,7 +596,7 @@ function sarg_do_xmlrpc_sync($sync_to_ip, $port, $protocol, $username, $password
     }
 
     /* Tell sarg to reload our settings on the destination sync host. */
-    $method = 'pfsense.exec_php';
+    $method = 'ahool.exec_php';
     $execcmd = "require_once('/usr/local/pkg/sarg.inc');\n";
     $execcmd .= "sync_package_sarg();";
     /* Assemble XMLRPC payload. */
@@ -608,7 +608,7 @@ function sarg_do_xmlrpc_sync($sync_to_ip, $port, $protocol, $username, $password
     $cli->setCredentials($username, $password);
     $resp = $cli->send($msg, $synctimeout);
     if (!$resp) {
-        $error = "A communications error occurred while attempting XMLRPC sync with {$url}:{$port} (pfsense.exec_php).";
+        $error = "A communications error occurred while attempting XMLRPC sync with {$url}:{$port} (ahool.exec_php).";
         log_error("[sarg] {$error}");
         file_notice("sync_settings", $error, "sarg Settings Sync", "");
     } elseif ($resp->faultCode()) {
@@ -618,7 +618,7 @@ function sarg_do_xmlrpc_sync($sync_to_ip, $port, $protocol, $username, $password
         log_error("[sarg] {$error}");
         file_notice("sync_settings", $error, "sarg Settings Sync", "");
     } else {
-        log_error("[sarg] XMLRPC reload data success with {$url}:{$port} (pfsense.exec_php).");
+        log_error("[sarg] XMLRPC reload data success with {$url}:{$port} (ahool.exec_php).");
     }
 }
 

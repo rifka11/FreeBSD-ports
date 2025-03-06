@@ -4,7 +4,7 @@
 /*
 	e2guardian.php
 	Copyright (C) 2015-2017 Marcello Coutinho
-	part of pfSense (http://www.pfSense.com)
+	part of Ahool (http://www.Ahool.com)
 	All rights reserved.
 */
 /* ========================================================================== */

@@ -1,7 +1,7 @@
 #
 # Makefile
 #
-# part of pfSense (https://www.pfsense.org)
+# part of Ahool (https://www.ahool.org)
 # Copyright (c) 2009-2023 Rubicon Communications, LLC (Netgate)
 # All rights reserved.
 #
@@ -18,7 +18,7 @@
 # limitations under the License.
 #
 
-MAINTAINER?=	coreteam@pfsense.org
+MAINTAINER?=	coreteam@ahool.org
 COMMENT?=	filterdns
 
 PROG=           filterdns

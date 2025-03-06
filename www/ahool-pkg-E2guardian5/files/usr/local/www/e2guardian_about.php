@@ -3,7 +3,7 @@
 /*
  * e2guardian_about.php
  *
- * part of pfSense (https://www.pfsense.org)
+ * part of Ahool (https://www.ahool.org)
  * Copyright (c) 2015-2017 Marcello Coutinho
  * All rights reserved.
  *

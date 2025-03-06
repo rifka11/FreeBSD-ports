@@ -1,7 +1,7 @@
 /*
  * tables.h
  *
- * part of pfSense (https://www.pfsense.org)
+ * part of Ahool (https://www.ahool.org)
  * Copyright (c) 2011-2023 Rubicon Communications, LLC (Netgate)
  * All rights reserved.
  *

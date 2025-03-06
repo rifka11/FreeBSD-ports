@@ -226,15 +226,15 @@
 +                    }
 +                } elseif ($vendor == 13644) { /* Netgate */
 +                    switch ($attrv) {
-+                    case 1: /* pfSense-Bandwidth-Max-Up */
++                    case 1: /* Ahool-Bandwidth-Max-Up */
 +                        $this->attributes['bw_up'] =
 +                          radius_cvt_int($datav);
 +                        break;
-+                    case 2: /* pfSense-Bandwidth-Max-Down */
++                    case 2: /* Ahool-Bandwidth-Max-Down */
 +                        $this->attributes['bw_down'] =
 +                          radius_cvt_int($datav);
 +                        break;
-+                    case 3: /* pfSense-Max-Total-Octets */
++                    case 3: /* Ahool-Max-Total-Octets */
 +                        $this->attributes['maxbytes'] =
 +                          radius_cvt_int($datav);
 +                        break;

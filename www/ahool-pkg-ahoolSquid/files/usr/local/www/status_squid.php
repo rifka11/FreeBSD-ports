@@ -2,7 +2,7 @@
 /*
  * squid_monitor.php
  *
- * part of pfSense (https://www.pfsense.org)
+ * part of Ahool (https://www.ahool.org)
  * Copyright (c) 2015-2023 Rubicon Communications, LLC (Netgate)
  * Copyright (C) 2012-2014 Marcello Coutinho
  * Copyright (C) 2012-2014 Carlos Cesario <carloscesario@gmail.com>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ahoolpkgs>
+	<package>
+		<name>LCDproc</name>
+		<descr><![CDATA[LCD display driver.]]></descr>
+		<version>%%PKGVERSION%%</version>
+		<configurationfile>lcdproc.xml</configurationfile>
+	</package>
+</ahoolpkgs>

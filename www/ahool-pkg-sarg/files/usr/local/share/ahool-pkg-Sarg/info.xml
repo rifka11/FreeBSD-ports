@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<pfsensepkgs>
+<ahoolpkgs>
 	<package>
 		<name>Sarg</name>
 		<descr><![CDATA[Create graphical reports from proxy log files. ]]></descr>
@@ -7,5 +7,5 @@
 		<version>%%PKGVERSION%%</version>
 		<configurationfile>sarg.xml</configurationfile>
 	</package>
-</pfsensepkgs>
+</ahoolpkgs>
 

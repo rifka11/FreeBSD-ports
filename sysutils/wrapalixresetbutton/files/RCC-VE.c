@@ -1,7 +1,7 @@
 /*
  * RCC-VE.c
  *
- * part of pfSense (https://www.pfsense.org)
+ * part of Ahool (https://www.ahool.org)
  * Copyright (c) 2014-2022 Rubicon Communications, LLC (Netgate)
  * All rights reserved.
  *

@@ -2,7 +2,7 @@
 /*
  * squid.inc
  *
- * part of pfSense (https://www.pfsense.org)
+ * part of Ahool (https://www.ahool.org)
  * Copyright (c) 2006-2023 Rubicon Communications, LLC (Netgate)
  * Copyright (c) 2013-2016 Marcello Coutinho
  * Copyright (c) 2006 Fernando Lemos
@@ -28,7 +28,7 @@ require_once('config.inc');
 require_once('config.lib.inc');
 require_once('globals.inc');
 require_once('notices.inc');
-require_once('pfsense-utils.inc');
+require_once('ahool-utils.inc');
 require_once('pkg-utils.inc');
 require_once('services.inc');
 require_once('service-utils.inc');
@@ -182,13 +182,13 @@ function squid_get_server_certs() {
 	return $cert_arr;
 }
 
-/* Handle extra CA certificates, see https://redmine.pfsense.org/issues/10605 */
+/* Handle extra CA certificates, see https://redmine.ahool.org/issues/10605 */
 function squid_gen_extra_ca() {
 	$capath = SQUID_LOCALBASE . '/share/certs';
 
 	unlink_if_exists("{$capath}/*.0");
 
-	/* add Trust Store CAs, see https://redmine.pfsense.org/issues/12738 */
+	/* add Trust Store CAs, see https://redmine.ahool.org/issues/12738 */
 	foreach (config_get_path('ca', []) as $ca) {
 		/* If the entry is invalid or is not trusted, skip it. */
 		if (!is_array($ca) ||
@@ -2611,12 +2611,12 @@ function squid_do_xmlrpc_sync($sync_to_ip, $port, $protocol, $username, $passwor
 			}
 		}
 		$synctimeout = intval($synctimeout);
-		$rpc_client = new pfsense_xmlrpc_client();
+		$rpc_client = new ahool_xmlrpc_client();
 		$rpc_client->setConnectionData($sync_to_ip, $port, $username, $password, $protocol);
 		$resp = $rpc_client->xmlrpc_method('merge_installedpackages_section', $xml, $synctimeout);
 		$resp = $rpc_client->xmlrpc_exec_php($execcmd, $synctimeout);
 	} else {
-		// pfSense before 2.4
+		// Ahool before 2.4
 		require_once('xmlrpc.inc');
 
 		// Take care of IPv6 literal address
@@ -2630,7 +2630,7 @@ function squid_do_xmlrpc_sync($sync_to_ip, $port, $protocol, $username, $passwor
 		$params = array(XML_RPC_encode($password), XML_RPC_encode($xml));
 
 		/* Set a few variables needed for sync */
-		$method = 'pfsense.merge_installedpackages_section_xmlrpc';
+		$method = 'ahool.merge_installedpackages_section_xmlrpc';
 		$msg = new XML_RPC_Message($method, $params);
 		$cli = new XML_RPC_Client('/xmlrpc.php', $url, $port);
 		$cli->setCredentials($username, $password);
@@ -2654,7 +2654,7 @@ function squid_do_xmlrpc_sync($sync_to_ip, $port, $protocol, $username, $passwor
 		}
 
 		/* Tell Squid to reload our settings on the destination sync host. */
-		$method = 'pfsense.exec_php';
+		$method = 'ahool.exec_php';
 		/* Assemble XMLRPC payload */
 		$params = array(XML_RPC_encode($password), XML_RPC_encode($execcmd));
 
@@ -2663,7 +2663,7 @@ function squid_do_xmlrpc_sync($sync_to_ip, $port, $protocol, $username, $passwor
 		$cli->setCredentials($username, $password);
 		$resp = $cli->send($msg, $synctimeout);
 		if (!$resp) {
-			$error = "A communication error occurred while attempting XMLRPC sync with {$url}:{$port} (pfsense.exec_php).";
+			$error = "A communication error occurred while attempting XMLRPC sync with {$url}:{$port} (ahool.exec_php).";
 			log_error("[squid] {$error}");
 			file_notice("sync_settings", $error, "Squid Settings Sync", "");
 		} elseif ($resp->faultCode()) {
@@ -2673,7 +2673,7 @@ function squid_do_xmlrpc_sync($sync_to_ip, $port, $protocol, $username, $passwor
 			log_error("[squid] {$error}");
 			file_notice("sync_settings", $error, "Squid Settings Sync", "");
 		} else {
-			log_error("[squid] XMLRPC reload data success with {$url}:{$port} (pfsense.exec_php).");
+			log_error("[squid] XMLRPC reload data success with {$url}:{$port} (ahool.exec_php).");
 		}
 	}
 }

@@ -4,8 +4,8 @@
   /* Bad credentials */
  <opensmtpd_failedcmd>"host="{HOSTNAME}" command=\"AUTH ".+"\" result=\"535 Authentication failed\"" { BEGIN(INITIAL); return OPENSMTPD_AUTHFAIL_SUFF; }
  
-+ /* pfSense */
-+.+"webConfigurator authentication error for user '"{WORD}"' from: " { return PFSENSE_AUTH_FAIL; }
++ /* Ahool */
++.+"webConfigurator authentication error for user '"{WORD}"' from: " { return AHOOL_AUTH_FAIL; }
  
   /**         COMMON-USE TOKENS       do not touch these          **/
   /* an IPv4 address */

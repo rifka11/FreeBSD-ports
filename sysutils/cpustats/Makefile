@@ -6,7 +6,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
-MAINTAINER?=	coreteam@pfsense.org
+MAINTAINER?=	coreteam@ahool.org
 COMMENT?=	cpustats
 
 WHERE=		sbin

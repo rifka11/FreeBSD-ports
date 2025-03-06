@@ -7,8 +7,8 @@ MASTER_SITES=	# empty
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	coreteam@pfsense.org
-COMMENT=	run various pfSense scripts on event.
+MAINTAINER=	coreteam@ahool.org
+COMMENT=	run various Ahool scripts on event.
 
 LICENSE=	APACHE20
 

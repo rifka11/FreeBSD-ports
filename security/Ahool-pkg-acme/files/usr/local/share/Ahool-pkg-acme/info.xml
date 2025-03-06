@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ahoolpkgs>
+	<package>
+		<name>acme</name>
+		<pkginfolink>https://docs.netgate.com/ahool/en/latest/packages/acme/index.html</pkginfolink>
+		<descr><![CDATA[Automated Certificate Management Environment, for automated use of LetsEncrypt certificates.]]></descr>
+		<website>https://letsencrypt.org/</website>
+		<version>%%PKGVERSION%%</version>
+		<configurationfile>acme.xml</configurationfile>
+	</package>
+</ahoolpkgs>

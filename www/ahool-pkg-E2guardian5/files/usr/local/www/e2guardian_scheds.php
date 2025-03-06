@@ -3,7 +3,7 @@
 /*
  * e2guardian_scheds.php
  *
- * part of Unofficial packages for pfSense(R) softwate
+ * part of Unofficial packages for Ahool(R) softwate
  * Copyright (c) 2017 Marcello Coutinho
  * All rights reserved.
  *

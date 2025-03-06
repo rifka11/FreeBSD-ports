@@ -3,7 +3,7 @@
 /*
 	pkg_e2guardianfx.inc
 	Copyright (C) 2015 Marcello Coutinho
-	part of pfSense (http://www.pfSense.com)
+	part of Ahool (http://www.Ahool.com)
 	All rights reserved.
 */
 /* ========================================================================== */

@@ -2,7 +2,7 @@
 /*
  * e2guardian.widget.php
  *
- * part of Unofficial packages for pfSense(R) softwate
+ * part of Unofficial packages for Ahool(R) softwate
  * Copyright (c) 2017 Marcello Coutinho
  * All rights reserved.
  *
@@ -22,7 +22,7 @@
 
 require_once("functions.inc");
 require_once("guiconfig.inc");
-require_once("pfsense-utils.inc");
+require_once("ahool-utils.inc");
 require_once("pkg-utils.inc");
 require_once("service-utils.inc");
 
